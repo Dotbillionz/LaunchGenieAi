@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LaunchGenie AI – Live Demo (Static)</title>
+  <style>
+    :root { --bg:#0f1115; --card:#171923; --muted:#9aa4af; --text:#e6edf3; --accent:#2bd576; }
+    * { box-sizing: border-box; }
+    body { margin:0; background:var(--bg); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
+    header { padding:24px; border-bottom:1px solid #222631; display:flex; align-items:center; gap:16px; }
+    .badge { background:#0a0c10; border:1px solid #222631; color:var(--muted); padding:4px 8px; border-radius:999px; font-size:12px; }
+    .container { max-width:1100px; margin:24px auto; padding:0 16px; }
+    .grid { display:grid; gap:16px; grid-template-columns: 1fr; }
+    @media (min-width: 900px) { .grid { grid-template-columns: 340px 1fr; } }
+    .card { background:var(--card); border:1px solid #222631; border-radius:16px; padding:16px; box-shadow: 0 10px 30px rgba(0,0,0,.25); }
+    h1,h2,h3 { margin:0 0 12px 0; }
+    h1 { font-size:22px; }
+    h2 { font-size:18px; color:#c8d1da; }
+    label { font-size:12px; color:var(--muted); display:block; margin-bottom:6px; }
+    input, textarea, select { width:100%; padding:10px 12px; background:#0d0f14; color:var(--text); border:1px solid #292d39; border-radius:10px; outline:none; }
+    button { background:var(--accent); color:#0b0e12; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700; }
+    button.secondary { background:#0d0f14; color:#fff; border:1px solid #2a2f3b; }
+    .row { display:flex; gap:10px; }
+    .row > * { flex:1; }
+    .list { display:flex; flex-direction:column; gap:8px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; background:#0d0f14; border:1px solid #2a2f3b; color:#cbd5e1; padding:6px 10px; border-radius:999px; font-size:12px; }
+    .footer { text-align:center; color:#7d8896; font-size:12px; padding:18px 0 40px; }
+    .small { font-size:12px; color:var(--muted); }
+    .muted { color:var(--muted); }
+    .section { margin-top:12px; padding-top:12px; border-top:1px dashed #262a36; }
+    pre { white-space: pre-wrap; word-wrap: break-word; background:#0d0f14; padding:12px; border-radius:10px; border:1px solid #2a2f3b; }
+    a { color:#7ee787; text-decoration:none; }
+  </style>
+</head>
+<body>
+  <header class="container">
+    <div style="flex:1">
+      <div class="badge">LaunchGenie AI · Static IRL Demo</div>
+      <h1 style="margin-top:6px">Startup Automation Preview (No backend)</h1>
+      <div class="small">Enter your region + idea, and the demo will generate docs, tasks, shopping list, emails, and budget scenarios.</div>
+    </div>
+    <a class="pill" href="README.md" target="_blank">View README.md</a>
+  </header>
+
+  <main class="container grid">
+    <section class="card">
+      <h2>Input</h2>
+      <div class="section">
+        <label>Country</label>
+        <input id="country" placeholder="e.g., Italy" value="Italy" />
+      </div>
+      <div class="section">
+        <label>State / Region</label>
+        <input id="state" placeholder="e.g., Tuscany" value="Tuscany" />
+      </div>
+      <div class="section">
+        <label>Startup Idea</label>
+        <textarea id="idea" rows="3" placeholder="Describe your idea...">Billiards & Hookah Lounge (Xspaces) with phased rollout and AI-powered operations</textarea>
+      </div>
+      <div class="section row">
+        <button onclick="generate()">Generate Plan</button>
+        <button class="secondary" onclick="share()">Share Link</button>
+      </div>
+      <div class="section small muted">
+        Tip: Add query params like <code>?country=Italy&state=Tuscany&idea=Xspaces</code> to prefill this page.
+      </div>
+    </section>
+
+    <section id="output" class="card">
+      <h2>Output</h2>
+      <div class="small muted">Your plan will appear here.</div>
+    </section>
+  </main>
+
+  <div class="container footer">
+    <div>© 2025 VaultzForge / Crownaria · Demo only · No legal advice</div>
+  </div>
+
+  <script>
+    function getQP(name) {
+      const u = new URL(window.location.href);
+      return u.searchParams.get(name) || "";
+    }
+    function prefillFromURL() {
+      const c = getQP('country'); const s = getQP('state'); const i = getQP('idea');
+      if (c) document.getElementById('country').value = c;
+      if (s) document.getElementById('state').value = s;
+      if (i) document.getElementById('idea').value = i;
+    }
+
+    function synthDocs(country, state, idea) {
+      const docs = [];
+      if (/italy/i.test(country)) {
+        docs.push({name:"SCIA - Segnalazione Certificata di Inizio Attività", how:"File via SUAP del Comune. Processing: 30 days typical."});
+        docs.push({name:"HACCP - Food Safety Compliance", how:"Formazione e manuale; corso regionale; verifica ASL."});
+        docs.push({name:"SAB/REC - Somministrazione Alimenti e Bevande", how:"Course + exam via Regione. Required if serving drinks."});
+        docs.push({name:"INPS/INAIL Registrations", how:"Enrol as datore di lavoro. If solo: gestione separata/Artigiani."});
+        docs.push({name:"Partita IVA / Ateco Codes", how:"Agenzia Entrate. Choose appropriate ATECO for lounge/bar."});
+      } else {
+        docs.push({name:"Business Registration", how:"Local registrar or national business portal."});
+        docs.push({name:"Tax ID / VAT", how:"Revenue authority portal."});
+        docs.push({name:"Operating License(s)", how:"Municipal permits per business type."});
+      }
+      if (/hookah|shisha|bar|lounge/i.test(idea)) {
+        docs.push({name:"Tobacco-related authorization (if applicable)", how:"Local Prefettura/Comune; varies by municipality."});
+        docs.push({name:"Music Public Performance License", how:"SIAE (IT) or local rights org."});
+      }
+      return docs;
+    }
+
+    function synthTasks() {
+      return [
+        {t:"Brand & Identity", d:["Name, logo, colors, signage", "Instagram + Google Business setup"]},
+        {t:"Permits & Compliance", d:["SCIA, HACCP, SAB/REC", "Safety plan + insurance (R.C.)"]},
+        {t:"Location & Lease", d:["Shortlist spaces", "Negotiate rent & terms"]},
+        {t:"Procurement", d:["Billiard tables (2)", "Lounge chairs, bar set", "POS (SumUp/Stripe)"]},
+        {t:"Hiring", d:["Job posts", "Deel/EOR or Part-time contracts"]},
+        {t:"Launch Ops", d:["Soft open checklist", "Grand opening + promo"]},
+      ];
+    }
+
+    function synthShopping(idea) {
+      const items = [
+        {name:"Billiard Table (9ft)", link:"https://www.amazon.it/s?k=biliardo+9+piedi"},
+        {name:"Hookah Set (Commercial)", link:"https://www.amazon.it/s?k=narguile+professionale"},
+        {name:"POS Terminal (SumUp Air)", link:"https://sumup.it/lettori-di-carte/air/"},
+        {name:"Lounge Chairs (Set of 4)", link:"https://www.amazon.it/s?k=poltrone+lounge"},
+        {name:"Bar Tools Kit", link:"https://www.amazon.it/s?k=bar+set+professionale"},
+        {name:"CCTV Kit (4 cams)", link:"https://www.amazon.it/s?k=cctv+kit"},
+      ];
+      if (!/billiard|pool|hookah|shisha/i.test(idea)) items.length = 3;
+      return items;
+    }
+
+    function synthBudgets() {
+      return [
+        {tier:"€5k", notes:["Used equipment", "Small space, minimal decor"], can:["2 used tables","Basic hookah corner","DIY signage"]},
+        {tier:"€25k", notes:["Better location", "New furniture"], can:["2-3 new tables","Pro hookah setup","Sound system"]},
+        {tier:"€50k+", notes:["Prime location", "Brand buildout"], can:["4+ tables","Full bar-like lounge","Lighting & interior"]},
+      ];
+    }
+
+    function synthEmails(country, state, idea) {
+      return {
+        landlord: `Subject: Viewing Request – ${idea} in ${state}, ${country}
+        
+Hello,
+I’m exploring a lease for a new ${idea} in ${state}. Could we schedule a viewing this week? I’m prepared to discuss terms and fit-out timeline.
+Best regards,
+Operations — LaunchGenie`,
+        vendor: `Subject: Vendor Terms – ${idea}
+        
+Hello,
+We’re sourcing equipment for a ${idea}. Please share bulk pricing, lead times, and warranty terms.
+Thanks,
+Procurement — LaunchGenie`,
+        investor: `Subject: Seed Round Intro – ${idea} (${state}, ${country})
+        
+Hello,
+We’re launching ${idea} in ${state}. Attaching our rollout plan and budget scenarios. Would you be open to a brief intro call?`
+      };
+    }
+
+    function generate() {
+      const country = document.getElementById('country').value.trim();
+      const state = document.getElementById('state').value.trim();
+      const idea = document.getElementById('idea').value.trim();
+      const docs = synthDocs(country, state, idea);
+      const tasks = synthTasks();
+      const shop = synthShopping(idea);
+      const budgets = synthBudgets();
+      const emails = synthEmails(country, state, idea);
+
+      const out = document.getElementById('output');
+      out.innerHTML = `
+        <div class="section">
+          <h3>Regulatory & Documentation</h3>
+          <div class="list">${docs.map(d=>`<div class="pill">${d.name}</div><div class="small muted" style="margin:6px 0 10px">${d.how}</div>`).join("")}</div>
+        </div>
+        <div class="section">
+          <h3>Tasks & Workflow</h3>
+          ${tasks.map(b=>`<div style="margin:10px 0"><strong>${b.t}</strong><div class="small muted">${b.d.join(" · ")}</div></div>`).join("")}
+        </div>
+        <div class="section">
+          <h3>Shopping List</h3>
+          <ul>${shop.map(i=>`<li><a href="${i.link}" target="_blank">${i.name}</a></li>`).join("")}</ul>
+        </div>
+        <div class="section">
+          <h3>Budget Scenarios</h3>
+          ${budgets.map(b=>`<div class="card" style="margin:10px 0; padding:10px"><strong>${b.tier}</strong><div class="small muted">Notes: ${b.notes.join(", ")}</div><div class="small">You can afford: ${b.can.join(", ")}</div></div>`).join("")}
+        </div>
+        <div class="section">
+          <h3>Email Templates</h3>
+          <details><summary>Landlord outreach</summary><pre>${emails.landlord}</pre></details>
+          <details><summary>Vendor request</summary><pre>${emails.vendor}</pre></details>
+          <details><summary>Investor intro</summary><pre>${emails.investor}</pre></details>
+        </div>
+      `;
+      window.scrollTo({top:0, behavior:"smooth"});
+    }
+
+    function share() {
+      const base = window.location.origin + window.location.pathname;
+      const c = encodeURIComponent(document.getElementById('country').value.trim());
+      const s = encodeURIComponent(document.getElementById('state').value.trim());
+      const i = encodeURIComponent(document.getElementById('idea').value.trim());
+      const url = `${base}?country=${c}&state=${s}&idea=${i}`;
+      navigator.clipboard.writeText(url).then(()=>{
+        alert("Sharable link copied to clipboard:\n" + url);
+      });
+    }
+
+    prefillFromURL();
+  </script>
+</body>
+</html>
