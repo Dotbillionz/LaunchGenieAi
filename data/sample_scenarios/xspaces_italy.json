@@ -1,0 +1,96 @@
+{
+  "id": "xspaces_italy",
+  "region": { "country": "Italy", "state": "Tuscany", "city": "Fucecchio" },
+  "idea": "Billiards & Hookah Lounge (Xspaces)",
+  "codes": { "NAF": ["563000"] },
+  "permits": [
+    {
+      "name": "SCIA",
+      "description": "Self‑certification start of activity",
+      "link": "https://www.impresainungiorno.gov.it/"
+    },
+    {
+      "name": "HACCP",
+      "description": "Food safety plan required for handling drinks and snacks"
+    },
+    {
+      "name": "SAB/REC",
+      "description": "Licence to serve alcoholic beverages"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Define brand & concept",
+      "description": "Develop the lounge theme, branding and customer experience."
+    },
+    {
+      "title": "Incorporate company",
+      "description": "Register legal entity (S.r.l. or similar) and obtain tax ID."
+    },
+    {
+      "title": "Secure location",
+      "description": "Search for spaces, negotiate lease and sign contract.",
+      "depends_on": ["Define brand & concept"]
+    },
+    {
+      "title": "Obtain permits",
+      "description": "File SCIA, HACCP and SAB/REC applications with the municipality.",
+      "depends_on": ["Incorporate company"]
+    },
+    {
+      "title": "Purchase equipment",
+      "description": "Order billiard tables, hookah sets, POS systems and furniture.",
+      "depends_on": ["Secure location"]
+    },
+    {
+      "title": "Hire staff",
+      "description": "Recruit bartenders, servers and operations staff."
+    },
+    {
+      "title": "Launch marketing",
+      "description": "Promote opening via social media, flyers and influencer outreach."
+    }
+  ],
+  "shopping": [
+    {
+      "name": "Billiard tables",
+      "quantity": 4,
+      "links": ["https://example.com/billiard-table"]
+    },
+    {
+      "name": "Hookah sets",
+      "quantity": 8,
+      "links": ["https://example.com/hookah"]
+    },
+    {
+      "name": "Bar & lounge furniture",
+      "links": ["https://example.com/lounge-furniture"]
+    },
+    {
+      "name": "Point-of-sale system",
+      "links": ["https://example.com/pos"]
+    }
+  ],
+  "budgets": [
+    {
+      "range": "< €5 000",
+      "summary": "Shoestring launch with minimal furnishings and second‑hand tables.",
+      "items": ["Used billiard table", "Second‑hand couches", "DIY marketing"]
+    },
+    {
+      "range": "€5 000–€25 000",
+      "summary": "Standard launch with new equipment and modest décor.",
+      "items": ["New tables", "POS system", "Marketing campaign"]
+    },
+    {
+      "range": "> €25 000",
+      "summary": "Premium launch with high‑end furnishings and VIP lounge.",
+      "items": ["Custom tables", "Luxury seating", "Professional interior design"]
+    }
+  ],
+  "emails": {
+    "landlord": "Dear <Landlord>,\n\nI’m writing to inquire about the commercial space at <address>. We are opening a billiards & hookah lounge and seek a high‑foot‑traffic location with sufficient ventilation. Please let us know availability, terms and any special requirements.\n\nRegards,\nXspaces Team",
+    "vendor": "Hello <Vendor>,\n\nWe’re launching a billiards & hookah lounge in Tuscany and would like to place an order for tables, hookah sets and accessories. Could you provide pricing and lead times?\n\nThank you,\nXspaces Team",
+    "investor": "Dear <Investor>,\n\nWe are thrilled to present Xspaces, a premium billiards & hookah lounge concept targeting the Tuscan nightlife market. Attached is our deck outlining the opportunity, financial projections and go‑to‑market strategy. We would welcome your feedback and potential partnership.\n\nSincerely,\nXspaces Team"
+  }
+}
