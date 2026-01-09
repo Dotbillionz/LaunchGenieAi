@@ -3,12 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>LaunchGenie AI – Live Demo (Static)</title>
+  <meta name="description" content="LaunchGenie AI - Automated product launch strategies and startup planning assistant. Generate regulatory docs, tasks, budgets, and more."/>
+  <title>LaunchGenie AI – Startup Launch Assistant</title>
   <style>
-    :root { --bg:#0f1115; --card:#171923; --muted:#9aa4af; --text:#e6edf3; --accent:#2bd576; }
+    :root { --bg:#0f1115; --card:#171923; --muted:#9aa4af; --text:#e6edf3; --accent:#2bd576; --accent-hover:#24c169; }
     * { box-sizing: border-box; }
     body { margin:0; background:var(--bg); color:var(--text); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial; }
-    header { padding:24px; border-bottom:1px solid #222631; display:flex; align-items:center; gap:16px; }
+    header { padding:24px; border-bottom:1px solid #222631; display:flex; align-items:center; gap:16px; flex-wrap:wrap; }
     .badge { background:#0a0c10; border:1px solid #222631; color:var(--muted); padding:4px 8px; border-radius:999px; font-size:12px; }
     .container { max-width:1100px; margin:24px auto; padding:0 16px; }
     .grid { display:grid; gap:16px; grid-template-columns: 1fr; }
@@ -17,64 +18,112 @@
     h1,h2,h3 { margin:0 0 12px 0; }
     h1 { font-size:22px; }
     h2 { font-size:18px; color:#c8d1da; }
-    label { font-size:12px; color:var(--muted); display:block; margin-bottom:6px; }
-    input, textarea, select { width:100%; padding:10px 12px; background:#0d0f14; color:var(--text); border:1px solid #292d39; border-radius:10px; outline:none; }
-    button { background:var(--accent); color:#0b0e12; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700; }
+    h3 { font-size:16px; color:#c8d1da; }
+    label { font-size:12px; color:var(--muted); display:block; margin-bottom:6px; font-weight:600; }
+    input, textarea, select { width:100%; padding:10px 12px; background:#0d0f14; color:var(--text); border:1px solid #292d39; border-radius:10px; outline:none; font-size:14px; transition: border-color 0.2s; }
+    input:focus, textarea:focus, select:focus { border-color:var(--accent); }
+    button { background:var(--accent); color:#0b0e12; border:none; padding:10px 14px; border-radius:10px; cursor:pointer; font-weight:700; transition: background-color 0.2s; }
+    button:hover { background:var(--accent-hover); }
     button.secondary { background:#0d0f14; color:#fff; border:1px solid #2a2f3b; }
+    button.secondary:hover { background:#1a1d28; }
     .row { display:flex; gap:10px; }
     .row > * { flex:1; }
     .list { display:flex; flex-direction:column; gap:8px; }
-    .pill { display:inline-flex; align-items:center; gap:8px; background:#0d0f14; border:1px solid #2a2f3b; color:#cbd5e1; padding:6px 10px; border-radius:999px; font-size:12px; }
+    .pill { display:inline-flex; align-items:center; gap:8px; background:#0d0f14; border:1px solid #2a2f3b; color:#cbd5e1; padding:6px 10px; border-radius:999px; font-size:12px; text-decoration:none; transition: border-color 0.2s; }
+    .pill:hover { border-color:#3a3f4b; }
     .footer { text-align:center; color:#7d8896; font-size:12px; padding:18px 0 40px; }
     .small { font-size:12px; color:var(--muted); }
     .muted { color:var(--muted); }
     .section { margin-top:12px; padding-top:12px; border-top:1px dashed #262a36; }
-    pre { white-space: pre-wrap; word-wrap: break-word; background:#0d0f14; padding:12px; border-radius:10px; border:1px solid #2a2f3b; }
+    pre { white-space: pre-wrap; word-wrap: break-word; background:#0d0f14; padding:12px; border-radius:10px; border:1px solid #2a2f3b; font-size:12px; line-height:1.5; }
     a { color:#7ee787; text-decoration:none; }
+    a:hover { text-decoration:underline; }
+    details { margin:8px 0; }
+    details summary { cursor:pointer; padding:8px; background:#0d0f14; border:1px solid #2a2f3b; border-radius:8px; font-weight:600; transition: background-color 0.2s; }
+    details summary:hover { background:#1a1d28; }
+    details[open] summary { margin-bottom:8px; }
+    .info-banner { background:#1a2332; border:1px solid #2a3f5f; border-radius:12px; padding:16px; margin-bottom:16px; }
+    .info-banner h3 { color:#7ee787; margin-bottom:8px; }
+    .timestamp { font-size:11px; color:#7d8896; text-align:right; margin-top:8px; }
+    .loading { display:none; text-align:center; padding:20px; color:var(--muted); }
+    .loading.active { display:block; }
   </style>
 </head>
 <body>
   <header class="container">
     <div style="flex:1">
-      <div class="badge">LaunchGenie AI · Static IRL Demo</div>
-      <h1 style="margin-top:6px">Startup Automation Preview (No backend)</h1>
-      <div class="small">Enter your region + idea, and the demo will generate docs, tasks, shopping list, emails, and budget scenarios.</div>
+      <div class="badge">LaunchGenie AI · VaultzForge LLC</div>
+      <h1 style="margin-top:6px">AI-Powered Startup Launch Assistant</h1>
+      <div class="small">Automated product-launch strategies with regulatory compliance, task workflows, budgets, and market intelligence.</div>
     </div>
-    <a class="pill" href="README.md" target="_blank">View README.md</a>
+    <a class="pill" href="https://github.com/Dotbillionz/LaunchGenieAi" target="_blank">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      GitHub
+    </a>
   </header>
 
-  <main class="container grid">
-    <section class="card">
-      <h2>Input</h2>
-      <div class="section">
-        <label>Country</label>
-        <input id="country" placeholder="e.g., Italy" value="Italy" />
+  <main class="container">
+    <div class="info-banner">
+      <h3>🎯 Project Overview</h3>
+      <p style="margin:0; line-height:1.6;">
+        <strong>LaunchGenie</strong> is an AI assistant designed to automate product-launch strategies for startups and entrepreneurs. 
+        This interactive demo generates customized launch plans including regulatory documentation, task workflows, procurement lists, 
+        budget scenarios, and email templates—all tailored to your specific region and business idea.
+      </p>
+      <div class="small" style="margin-top:8px; color:#9aa4af;">
+        <strong>Current Status:</strong> Refining analytics and user experience · Prototype algorithm and UI complete
       </div>
-      <div class="section">
-        <label>State / Region</label>
-        <input id="state" placeholder="e.g., Tuscany" value="Tuscany" />
-      </div>
-      <div class="section">
-        <label>Startup Idea</label>
-        <textarea id="idea" rows="3" placeholder="Describe your idea...">Billiards & Hookah Lounge (Xspaces) with phased rollout and AI-powered operations</textarea>
-      </div>
-      <div class="section row">
-        <button onclick="generate()">Generate Plan</button>
-        <button class="secondary" onclick="share()">Share Link</button>
-      </div>
-      <div class="section small muted">
-        Tip: Add query params like <code>?country=Italy&state=Tuscany&idea=Xspaces</code> to prefill this page.
-      </div>
-    </section>
+    </div>
 
-    <section id="output" class="card">
-      <h2>Output</h2>
-      <div class="small muted">Your plan will appear here.</div>
-    </section>
+    <div class="grid">
+      <section class="card">
+        <h2>📝 Input Your Startup Details</h2>
+        <div class="section">
+          <label>Country</label>
+          <input id="country" placeholder="e.g., Italy, USA, Germany" value="Italy" />
+        </div>
+        <div class="section">
+          <label>State / Region</label>
+          <input id="state" placeholder="e.g., Tuscany, California" value="Tuscany" />
+        </div>
+        <div class="section">
+          <label>Startup Idea / Business Concept</label>
+          <textarea id="idea" rows="4" placeholder="Describe your startup idea in detail...">Billiards & Hookah Lounge (Xspaces) with phased rollout, AI-powered operations, and integrated payment systems</textarea>
+        </div>
+        <div class="section row">
+          <button onclick="generate()">🚀 Generate Launch Plan</button>
+          <button class="secondary" onclick="share()">🔗 Share Link</button>
+        </div>
+        <div class="section small muted">
+          💡 <strong>Tip:</strong> You can prefill this form by adding query parameters to the URL:<br/>
+          <code>?country=Italy&state=Tuscany&idea=YourIdea</code>
+        </div>
+        <div class="section small muted">
+          <strong>Example Ideas:</strong>
+          <ul style="margin:8px 0; padding-left:20px;">
+            <li>SaaS platform for small businesses</li>
+            <li>Restaurant or food delivery service</li>
+            <li>E-commerce marketplace</li>
+            <li>Entertainment venue or lounge</li>
+            <li>Tech consulting agency</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="output" class="card">
+        <h2>📊 Generated Launch Plan</h2>
+        <div class="small muted">Your customized launch plan will appear here after clicking "Generate Launch Plan".</div>
+        <div class="loading" id="loading">
+          <div>⚙️ Generating your launch plan...</div>
+        </div>
+      </section>
+    </div>
   </main>
 
   <div class="container footer">
-    <div>© 2025 VaultzForge / Crownaria · Demo only · No legal advice</div>
+    <div>© 2025-2026 VaultzForge LLC / Crownaria · LaunchGenie AI Demo</div>
+    <div style="margin-top:4px;">For demonstration purposes only · Not legal or financial advice</div>
+    <div class="timestamp">Last updated: January 9, 2026</div>
   </div>
 
   <script>
@@ -82,83 +131,421 @@
       const u = new URL(window.location.href);
       return u.searchParams.get(name) || "";
     }
+    
     function prefillFromURL() {
-      const c = getQP('country'); const s = getQP('state'); const i = getQP('idea');
+      const c = getQP('country'); 
+      const s = getQP('state'); 
+      const i = getQP('idea');
       if (c) document.getElementById('country').value = c;
       if (s) document.getElementById('state').value = s;
       if (i) document.getElementById('idea').value = i;
+      
+      // Auto-generate if all params are present
+      if (c && s && i) {
+        setTimeout(() => generate(), 500);
+      }
     }
 
     function synthDocs(country, state, idea) {
       const docs = [];
-      if (/italy/i.test(country)) {
-        docs.push({name:"SCIA - Segnalazione Certificata di Inizio Attività", how:"File via SUAP del Comune. Processing: 30 days typical."});
-        docs.push({name:"HACCP - Food Safety Compliance", how:"Formazione e manuale; corso regionale; verifica ASL."});
-        docs.push({name:"SAB/REC - Somministrazione Alimenti e Bevande", how:"Course + exam via Regione. Required if serving drinks."});
-        docs.push({name:"INPS/INAIL Registrations", how:"Enrol as datore di lavoro. If solo: gestione separata/Artigiani."});
-        docs.push({name:"Partita IVA / Ateco Codes", how:"Agenzia Entrate. Choose appropriate ATECO for lounge/bar."});
+      const countryLower = country.toLowerCase();
+      const ideaLower = idea.toLowerCase();
+      
+      if (/italy|italia/i.test(country)) {
+        docs.push({
+          name:"SCIA - Segnalazione Certificata di Inizio Attività", 
+          how:"File via SUAP (Sportello Unico Attività Produttive) del Comune. Processing time: typically 30 days. Required for most business activities."
+        });
+        docs.push({
+          name:"HACCP - Food Safety Compliance", 
+          how:"Complete regional food safety course and create HACCP manual. ASL (Local Health Authority) verification required for food/beverage businesses."
+        });
+        docs.push({
+          name:"SAB/REC - Somministrazione Alimenti e Bevande", 
+          how:"Regional course + exam required if serving food and drinks. Mandatory for bars, restaurants, and lounges."
+        });
+        docs.push({
+          name:"INPS/INAIL Registrations", 
+          how:"Enroll as employer (datore di lavoro). If solo entrepreneur: gestione separata or Artigiani/Commercianti registration."
+        });
+        docs.push({
+          name:"Partita IVA / ATECO Codes", 
+          how:"Register with Agenzia delle Entrate. Choose appropriate ATECO code for your business category (e.g., 56.30.00 for bars)."
+        });
+        docs.push({
+          name:"Camera di Commercio Registration", 
+          how:"Register your business with the local Chamber of Commerce. Required for most commercial activities."
+        });
+      } else if (/usa|united states|america/i.test(country)) {
+        docs.push({
+          name:"Business Registration / LLC Formation", 
+          how:"Register with state Secretary of State. Choose business structure (LLC, Corporation, etc.)."
+        });
+        docs.push({
+          name:"EIN - Employer Identification Number", 
+          how:"Apply through IRS website. Required for tax purposes and hiring employees."
+        });
+        docs.push({
+          name:"Business License", 
+          how:"Obtain from city/county clerk. Requirements vary by location and business type."
+        });
+        docs.push({
+          name:"Sales Tax Permit", 
+          how:"Register with state revenue department if selling goods or taxable services."
+        });
+        docs.push({
+          name:"Food Service License (if applicable)", 
+          how:"Health department inspection and approval required for food/beverage businesses."
+        });
       } else {
-        docs.push({name:"Business Registration", how:"Local registrar or national business portal."});
-        docs.push({name:"Tax ID / VAT", how:"Revenue authority portal."});
-        docs.push({name:"Operating License(s)", how:"Municipal permits per business type."});
+        docs.push({
+          name:"Business Registration", 
+          how:"Register with local/national business registry. Check specific requirements for your country."
+        });
+        docs.push({
+          name:"Tax ID / VAT Registration", 
+          how:"Obtain tax identification number from revenue authority. VAT registration if applicable."
+        });
+        docs.push({
+          name:"Operating License(s)", 
+          how:"Apply for municipal/regional permits based on business type and location."
+        });
+        docs.push({
+          name:"Health & Safety Permits", 
+          how:"Required for food service, public venues, and certain business types."
+        });
       }
-      if (/hookah|shisha|bar|lounge/i.test(idea)) {
-        docs.push({name:"Tobacco-related authorization (if applicable)", how:"Local Prefettura/Comune; varies by municipality."});
-        docs.push({name:"Music Public Performance License", how:"SIAE (IT) or local rights org."});
+      
+      if (/hookah|shisha|bar|lounge|nightclub|entertainment/i.test(idea)) {
+        docs.push({
+          name:"Tobacco/Hookah Authorization", 
+          how:"Special permit required for tobacco sales/service. Check with local Prefettura/health department."
+        });
+        docs.push({
+          name:"Music Public Performance License", 
+          how:"SIAE (Italy), ASCAP/BMI (USA), or local rights organization. Required for playing music publicly."
+        });
+        docs.push({
+          name:"Alcohol License (if applicable)", 
+          how:"Liquor license from local authority. Often requires separate application and fees."
+        });
       }
+      
+      if (/restaurant|food|cafe|kitchen/i.test(idea)) {
+        docs.push({
+          name:"Food Handler Certifications", 
+          how:"All staff handling food must complete food safety training and obtain certifications."
+        });
+      }
+      
       return docs;
     }
 
     function synthTasks() {
       return [
-        {t:"Brand & Identity", d:["Name, logo, colors, signage", "Instagram + Google Business setup"]},
-        {t:"Permits & Compliance", d:["SCIA, HACCP, SAB/REC", "Safety plan + insurance (R.C.)"]},
-        {t:"Location & Lease", d:["Shortlist spaces", "Negotiate rent & terms"]},
-        {t:"Procurement", d:["Billiard tables (2)", "Lounge chairs, bar set", "POS (SumUp/Stripe)"]},
-        {t:"Hiring", d:["Job posts", "Deel/EOR or Part-time contracts"]},
-        {t:"Launch Ops", d:["Soft open checklist", "Grand opening + promo"]},
+        {
+          t:"🎨 Brand & Identity", 
+          d:[
+            "Develop brand name, logo, color palette, and visual identity",
+            "Create brand guidelines and style guide",
+            "Set up Instagram, Facebook, LinkedIn, and Google Business Profile",
+            "Design signage, business cards, and marketing materials"
+          ]
+        },
+        {
+          t:"📋 Permits & Compliance", 
+          d:[
+            "Research and compile all required permits and licenses",
+            "Submit SCIA, HACCP, SAB/REC applications (or local equivalents)",
+            "Obtain business insurance (liability, property, workers' comp)",
+            "Create safety and emergency response plans"
+          ]
+        },
+        {
+          t:"🏢 Location & Lease", 
+          d:[
+            "Define location criteria (foot traffic, size, zoning)",
+            "Shortlist and visit potential spaces",
+            "Negotiate lease terms, rent, and fit-out period",
+            "Conduct due diligence and sign lease agreement"
+          ]
+        },
+        {
+          t:"🛒 Procurement & Setup", 
+          d:[
+            "Source and purchase equipment (see Shopping List)",
+            "Set up POS system (SumUp, Stripe, Square)",
+            "Install furniture, fixtures, and decor",
+            "Set up internet, phone, and security systems (CCTV)"
+          ]
+        },
+        {
+          t:"👥 Hiring & Training", 
+          d:[
+            "Create job descriptions and post openings",
+            "Interview and hire staff (bartenders, servers, managers)",
+            "Onboard via Deel, EOR, or local employment contracts",
+            "Conduct training on operations, customer service, and safety"
+          ]
+        },
+        {
+          t:"🚀 Launch Operations", 
+          d:[
+            "Create soft launch checklist and test operations",
+            "Plan grand opening event and promotional campaigns",
+            "Set up social media advertising and local partnerships",
+            "Monitor operations and gather customer feedback"
+          ]
+        },
+        {
+          t:"📈 Analytics & Growth", 
+          d:[
+            "Implement analytics tracking (sales, foot traffic, customer data)",
+            "Set up automated reporting and dashboards",
+            "Plan expansion strategy and additional locations",
+            "Integrate AI-powered operations and optimization tools"
+          ]
+        }
       ];
     }
 
     function synthShopping(idea) {
-      const items = [
-        {name:"Billiard Table (9ft)", link:"https://www.amazon.it/s?k=biliardo+9+piedi"},
-        {name:"Hookah Set (Commercial)", link:"https://www.amazon.it/s?k=narguile+professionale"},
-        {name:"POS Terminal (SumUp Air)", link:"https://sumup.it/lettori-di-carte/air/"},
-        {name:"Lounge Chairs (Set of 4)", link:"https://www.amazon.it/s?k=poltrone+lounge"},
-        {name:"Bar Tools Kit", link:"https://www.amazon.it/s?k=bar+set+professionale"},
-        {name:"CCTV Kit (4 cams)", link:"https://www.amazon.it/s?k=cctv+kit"},
-      ];
-      if (!/billiard|pool|hookah|shisha/i.test(idea)) items.length = 3;
+      const items = [];
+      const ideaLower = idea.toLowerCase();
+      
+      // Core business items
+      items.push({
+        name:"POS Terminal (SumUp Air or Stripe Terminal)", 
+        link:"https://sumup.it/lettori-di-carte/air/",
+        category:"Payment Systems"
+      });
+      items.push({
+        name:"CCTV Security Kit (4-8 cameras)", 
+        link:"https://www.amazon.it/s?k=cctv+kit+professionale",
+        category:"Security"
+      });
+      items.push({
+        name:"Commercial WiFi Router & Networking", 
+        link:"https://www.amazon.it/s?k=router+commerciale",
+        category:"Technology"
+      });
+      
+      if (/billiard|pool/i.test(idea)) {
+        items.push({
+          name:"Professional Billiard Table (9ft)", 
+          link:"https://www.amazon.it/s?k=biliardo+9+piedi+professionale",
+          category:"Gaming Equipment"
+        });
+        items.push({
+          name:"Billiard Accessories Set (cues, balls, rack)", 
+          link:"https://www.amazon.it/s?k=accessori+biliardo+professionale",
+          category:"Gaming Equipment"
+        });
+      }
+      
+      if (/hookah|shisha/i.test(idea)) {
+        items.push({
+          name:"Commercial Hookah Set (Premium)", 
+          link:"https://www.amazon.it/s?k=narguile+professionale",
+          category:"Lounge Equipment"
+        });
+        items.push({
+          name:"Hookah Charcoal & Tobacco Supplies", 
+          link:"https://www.amazon.it/s?k=carbone+narguile",
+          category:"Supplies"
+        });
+      }
+      
+      if (/lounge|bar|restaurant|cafe/i.test(idea)) {
+        items.push({
+          name:"Lounge Chairs & Seating (Set of 4-8)", 
+          link:"https://www.amazon.it/s?k=poltrone+lounge+commerciale",
+          category:"Furniture"
+        });
+        items.push({
+          name:"Commercial Bar Tools & Equipment Kit", 
+          link:"https://www.amazon.it/s?k=bar+set+professionale",
+          category:"Bar Equipment"
+        });
+        items.push({
+          name:"Commercial Coffee Machine (if applicable)", 
+          link:"https://www.amazon.it/s?k=macchina+caffe+professionale",
+          category:"Kitchen Equipment"
+        });
+        items.push({
+          name:"Commercial Refrigerator/Freezer", 
+          link:"https://www.amazon.it/s?k=frigorifero+commerciale",
+          category:"Kitchen Equipment"
+        });
+      }
+      
+      items.push({
+        name:"Sound System & Speakers", 
+        link:"https://www.amazon.it/s?k=impianto+audio+commerciale",
+        category:"Entertainment"
+      });
+      items.push({
+        name:"LED Lighting & Ambiance Setup", 
+        link:"https://www.amazon.it/s?k=illuminazione+led+commerciale",
+        category:"Ambiance"
+      });
+      items.push({
+        name:"Fire Extinguishers & Safety Equipment", 
+        link:"https://www.amazon.it/s?k=estintore+commerciale",
+        category:"Safety"
+      });
+      
       return items;
     }
 
     function synthBudgets() {
       return [
-        {tier:"€5k", notes:["Used equipment", "Small space, minimal decor"], can:["2 used tables","Basic hookah corner","DIY signage"]},
-        {tier:"€25k", notes:["Better location", "New furniture"], can:["2-3 new tables","Pro hookah setup","Sound system"]},
-        {tier:"€50k+", notes:["Prime location", "Brand buildout"], can:["4+ tables","Full bar-like lounge","Lighting & interior"]},
+        {
+          tier:"€5,000 - €10,000 (Bootstrap)", 
+          notes:[
+            "Used/refurbished equipment where possible",
+            "Small space (30-50 sqm) with minimal renovation",
+            "DIY branding and marketing",
+            "Owner-operated with minimal staff"
+          ],
+          can:[
+            "1-2 used billiard tables or basic equipment",
+            "Basic hookah corner setup",
+            "DIY signage and simple interior",
+            "Essential POS and security systems",
+            "Soft launch with organic marketing"
+          ]
+        },
+        {
+          tier:"€25,000 - €35,000 (Standard Launch)", 
+          notes:[
+            "Mix of new and quality used equipment",
+            "Better location (60-100 sqm) with moderate fit-out",
+            "Professional branding and initial marketing budget",
+            "2-3 part-time staff members"
+          ],
+          can:[
+            "2-3 new or premium used tables",
+            "Professional hookah setup with quality equipment",
+            "Sound system and ambient lighting",
+            "Professional signage and interior design",
+            "Social media advertising and launch event"
+          ]
+        },
+        {
+          tier:"€50,000+ (Premium Launch)", 
+          notes:[
+            "All new, premium equipment and furniture",
+            "Prime location (100+ sqm) with full custom buildout",
+            "Complete brand identity and marketing campaign",
+            "Full staff team with professional management"
+          ],
+          can:[
+            "4+ professional billiard tables",
+            "Full bar and lounge setup with premium finishes",
+            "Advanced lighting, sound, and entertainment systems",
+            "Custom interior design and architectural elements",
+            "Grand opening event and sustained marketing campaigns",
+            "AI-powered operations and analytics integration"
+          ]
+        }
       ];
     }
 
     function synthEmails(country, state, idea) {
+      const timestamp = new Date().toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+      
       return {
         landlord: `Subject: Viewing Request – ${idea} in ${state}, ${country}
-        
+
 Hello,
-I’m exploring a lease for a new ${idea} in ${state}. Could we schedule a viewing this week? I’m prepared to discuss terms and fit-out timeline.
+
+I'm exploring lease opportunities for a new ${idea} in ${state}. I'm looking for a space that meets the following criteria:
+
+• Location: High foot traffic area in ${state}
+• Size: Approximately 60-120 square meters
+• Lease term: 3-5 years preferred
+• Fit-out period: 30-60 days before opening
+
+Could we schedule a viewing this week? I'm prepared to discuss terms, rental rates, and fit-out timeline.
+
+I look forward to hearing from you.
+
 Best regards,
-Operations — LaunchGenie`,
-        vendor: `Subject: Vendor Terms – ${idea}
-        
+[Your Name]
+LaunchGenie Operations Team
+Date: ${timestamp}`,
+
+        vendor: `Subject: Equipment & Vendor Partnership Inquiry – ${idea}
+
 Hello,
-We’re sourcing equipment for a ${idea}. Please share bulk pricing, lead times, and warranty terms.
-Thanks,
-Procurement — LaunchGenie`,
-        investor: `Subject: Seed Round Intro – ${idea} (${state}, ${country})
-        
+
+We're in the process of sourcing equipment and supplies for a new ${idea} launching in ${state}, ${country}.
+
+We're interested in:
+• Bulk pricing and volume discounts
+• Lead times and delivery schedules
+• Warranty terms and after-sales support
+• Payment terms and financing options
+
+Could you please share your catalog, pricing structure, and availability? We're planning to finalize orders within the next 2-3 weeks.
+
+Thank you for your time.
+
+Best regards,
+[Your Name]
+LaunchGenie Procurement Team
+Date: ${timestamp}`,
+
+        investor: `Subject: Seed Round Introduction – ${idea} (${state}, ${country})
+
 Hello,
-We’re launching ${idea} in ${state}. Attaching our rollout plan and budget scenarios. Would you be open to a brief intro call?`
+
+I'm reaching out to introduce an exciting opportunity in the ${state} market.
+
+Project Overview:
+• Concept: ${idea}
+• Location: ${state}, ${country}
+• Stage: Pre-launch / Seed funding
+• Market: [Brief market analysis]
+
+We're seeking seed funding to cover initial setup, equipment procurement, and launch marketing. Our projections show strong unit economics with a clear path to profitability within 12-18 months.
+
+Attached you'll find:
+• Detailed business plan and rollout strategy
+• Budget scenarios and financial projections
+• Market analysis and competitive landscape
+• Team background and execution roadmap
+
+Would you be open to a brief introductory call to discuss this opportunity further?
+
+Looking forward to connecting.
+
+Best regards,
+[Your Name]
+Founder, ${idea}
+Date: ${timestamp}`,
+
+        supplier: `Subject: Long-term Supply Partnership – ${idea}
+
+Hello,
+
+We're launching a ${idea} in ${state}, ${country}, and are looking to establish long-term supplier relationships for ongoing operations.
+
+Our requirements include:
+• Consistent quality and reliable delivery schedules
+• Competitive pricing for recurring orders
+• Flexible payment terms
+• Support for scaling operations across multiple locations
+
+We anticipate monthly orders and are interested in discussing partnership terms that benefit both parties.
+
+Please let me know if you'd be interested in exploring this opportunity.
+
+Best regards,
+[Your Name]
+LaunchGenie Supply Chain
+Date: ${timestamp}`
       };
     }
 
@@ -166,38 +553,155 @@ We’re launching ${idea} in ${state}. Attaching our rollout plan and budget sce
       const country = document.getElementById('country').value.trim();
       const state = document.getElementById('state').value.trim();
       const idea = document.getElementById('idea').value.trim();
-      const docs = synthDocs(country, state, idea);
-      const tasks = synthTasks();
-      const shop = synthShopping(idea);
-      const budgets = synthBudgets();
-      const emails = synthEmails(country, state, idea);
-
-      const out = document.getElementById('output');
-      out.innerHTML = `
-        <div class="section">
-          <h3>Regulatory & Documentation</h3>
-          <div class="list">${docs.map(d=>`<div class="pill">${d.name}</div><div class="small muted" style="margin:6px 0 10px">${d.how}</div>`).join("")}</div>
-        </div>
-        <div class="section">
-          <h3>Tasks & Workflow</h3>
-          ${tasks.map(b=>`<div style="margin:10px 0"><strong>${b.t}</strong><div class="small muted">${b.d.join(" · ")}</div></div>`).join("")}
-        </div>
-        <div class="section">
-          <h3>Shopping List</h3>
-          <ul>${shop.map(i=>`<li><a href="${i.link}" target="_blank">${i.name}</a></li>`).join("")}</ul>
-        </div>
-        <div class="section">
-          <h3>Budget Scenarios</h3>
-          ${budgets.map(b=>`<div class="card" style="margin:10px 0; padding:10px"><strong>${b.tier}</strong><div class="small muted">Notes: ${b.notes.join(", ")}</div><div class="small">You can afford: ${b.can.join(", ")}</div></div>`).join("")}
-        </div>
-        <div class="section">
-          <h3>Email Templates</h3>
-          <details><summary>Landlord outreach</summary><pre>${emails.landlord}</pre></details>
-          <details><summary>Vendor request</summary><pre>${emails.vendor}</pre></details>
-          <details><summary>Investor intro</summary><pre>${emails.investor}</pre></details>
-        </div>
-      `;
-      window.scrollTo({top:0, behavior:"smooth"});
+      
+      if (!country || !state || !idea) {
+        alert('Please fill in all fields before generating your launch plan.');
+        return;
+      }
+      
+      // Show loading state
+      const loading = document.getElementById('loading');
+      loading.classList.add('active');
+      
+      // Simulate processing time for better UX
+      setTimeout(() => {
+        const docs = synthDocs(country, state, idea);
+        const tasks = synthTasks();
+        const shop = synthShopping(idea);
+        const budgets = synthBudgets();
+        const emails = synthEmails(country, state, idea);
+        
+        const out = document.getElementById('output');
+        
+        // Group shopping items by category
+        const shopByCategory = {};
+        shop.forEach(item => {
+          if (!shopByCategory[item.category]) {
+            shopByCategory[item.category] = [];
+          }
+          shopByCategory[item.category].push(item);
+        });
+        
+        out.innerHTML = `
+          <div style="margin-bottom:16px;">
+            <h2>📊 Launch Plan for: ${idea}</h2>
+            <div class="small muted">Location: ${state}, ${country}</div>
+            <div class="timestamp">Generated: ${new Date().toLocaleString()}</div>
+          </div>
+          
+          <div class="section">
+            <h3>📋 Regulatory & Documentation Requirements</h3>
+            <div class="small muted" style="margin-bottom:12px;">Essential permits, licenses, and compliance documents required for your business:</div>
+            <div class="list">
+              ${docs.map(d=>`
+                <div style="margin-bottom:12px;">
+                  <div class="pill" style="display:block; padding:10px 12px;">
+                    <strong>${d.name}</strong>
+                  </div>
+                  <div class="small muted" style="margin:6px 0 0 12px; line-height:1.5;">
+                    ${d.how}
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+          
+          <div class="section">
+            <h3>✅ Task Workflow & Execution Plan</h3>
+            <div class="small muted" style="margin-bottom:12px;">Step-by-step tasks organized by category to guide your launch:</div>
+            ${tasks.map(b=>`
+              <div style="margin:16px 0; padding:12px; background:#0d0f14; border:1px solid #2a2f3b; border-radius:10px;">
+                <strong style="font-size:15px;">${b.t}</strong>
+                <ul style="margin:8px 0 0 0; padding-left:20px; line-height:1.7;">
+                  ${b.d.map(item => `<li class="small">${item}</li>`).join("")}
+                </ul>
+              </div>
+            `).join("")}
+          </div>
+          
+          <div class="section">
+            <h3>🛒 Procurement & Shopping List</h3>
+            <div class="small muted" style="margin-bottom:12px;">Essential equipment and supplies organized by category:</div>
+            ${Object.keys(shopByCategory).map(category => `
+              <div style="margin:12px 0;">
+                <strong style="color:#7ee787; font-size:14px;">${category}</strong>
+                <ul style="margin:6px 0; padding-left:20px;">
+                  ${shopByCategory[category].map(i=>`
+                    <li style="margin:4px 0;">
+                      <a href="${i.link}" target="_blank" style="font-size:13px;">${i.name}</a>
+                    </li>
+                  `).join("")}
+                </ul>
+              </div>
+            `).join("")}
+          </div>
+          
+          <div class="section">
+            <h3>💰 Budget Scenarios & Financial Planning</h3>
+            <div class="small muted" style="margin-bottom:12px;">Three budget tiers to help you plan your investment:</div>
+            ${budgets.map(b=>`
+              <div class="card" style="margin:12px 0; padding:14px; background:#0d0f14;">
+                <strong style="font-size:16px; color:#7ee787;">${b.tier}</strong>
+                <div style="margin:10px 0;">
+                  <div class="small" style="color:#c8d1da; margin-bottom:6px;"><strong>Characteristics:</strong></div>
+                  <ul style="margin:0; padding-left:20px; line-height:1.6;">
+                    ${b.notes.map(note => `<li class="small">${note}</li>`).join("")}
+                  </ul>
+                </div>
+                <div style="margin:10px 0;">
+                  <div class="small" style="color:#c8d1da; margin-bottom:6px;"><strong>What You Can Afford:</strong></div>
+                  <ul style="margin:0; padding-left:20px; line-height:1.6;">
+                    ${b.can.map(item => `<li class="small">${item}</li>`).join("")}
+                  </ul>
+                </div>
+              </div>
+            `).join("")}
+          </div>
+          
+          <div class="section">
+            <h3>📧 Email Templates & Outreach</h3>
+            <div class="small muted" style="margin-bottom:12px;">Ready-to-use email templates for key stakeholders:</div>
+            
+            <details>
+              <summary>🏢 Landlord / Property Owner Outreach</summary>
+              <pre>${emails.landlord}</pre>
+            </details>
+            
+            <details>
+              <summary>📦 Vendor / Equipment Supplier Request</summary>
+              <pre>${emails.vendor}</pre>
+            </details>
+            
+            <details>
+              <summary>💼 Investor Introduction & Pitch</summary>
+              <pre>${emails.investor}</pre>
+            </details>
+            
+            <details>
+              <summary>🤝 Supplier Partnership Inquiry</summary>
+              <pre>${emails.supplier}</pre>
+            </details>
+          </div>
+          
+          <div class="section" style="background:#1a2332; border:1px solid #2a3f5f; border-radius:10px; padding:14px; margin-top:20px;">
+            <h3 style="color:#7ee787; margin-bottom:8px;">🎯 Next Steps</h3>
+            <ol style="margin:8px 0; padding-left:20px; line-height:1.7;">
+              <li>Review all regulatory requirements and start permit applications</li>
+              <li>Finalize your budget and secure initial funding</li>
+              <li>Begin location scouting and lease negotiations</li>
+              <li>Use email templates to reach out to vendors and suppliers</li>
+              <li>Create a detailed timeline with milestones and deadlines</li>
+              <li>Set up social media accounts and begin building your brand</li>
+            </ol>
+            <div class="small muted" style="margin-top:12px;">
+              💡 <strong>Pro Tip:</strong> Start with the regulatory documents first, as they often have the longest processing times.
+            </div>
+          </div>
+        `;
+        
+        loading.classList.remove('active');
+        window.scrollTo({top:0, behavior:"smooth"});
+      }, 800);
     }
 
     function share() {
@@ -206,11 +710,19 @@ We’re launching ${idea} in ${state}. Attaching our rollout plan and budget sce
       const s = encodeURIComponent(document.getElementById('state').value.trim());
       const i = encodeURIComponent(document.getElementById('idea').value.trim());
       const url = `${base}?country=${c}&state=${s}&idea=${i}`;
-      navigator.clipboard.writeText(url).then(()=>{
-        alert("Sharable link copied to clipboard:\n" + url);
-      });
+      
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(url).then(()=>{
+          alert("✅ Shareable link copied to clipboard!\n\n" + url);
+        }).catch(()=>{
+          prompt("Copy this shareable link:", url);
+        });
+      } else {
+        prompt("Copy this shareable link:", url);
+      }
     }
 
+    // Initialize on page load
     prefillFromURL();
   </script>
 </body>
