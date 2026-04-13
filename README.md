@@ -76,3 +76,29 @@ https://your-domain.com/?country=Italy&state=Tuscany&idea=Billiards%20Lounge
 
 **Last Updated**: January 9, 2026  
 **Version**: 2.0 (Enhanced Demo)
+
+---
+
+## 👑 CrownOps (Milestone 1 Scaffold)
+
+A new production-oriented scaffold has been added under `apps/` for the executive fintech/blockchain command center:
+
+- `apps/backend`: Node.js + Express secure API baseline with GitHub webhook listener.
+- `apps/frontend`: Next.js executive dashboard shell with KPI cards.
+- `.github/workflows/ci.yml`: CI smoke checks.
+- `.env.example`: secrets template.
+- `docs/CROWNOPS_ARCHITECTURE.md`: architecture and next milestone plan.
+
+### Run the new backend locally
+
+```bash
+npm install
+cp .env.example .env
+npm run dev:backend
+```
+
+### Run the dashboard locally
+
+```bash
+npm run dev:frontend
+```
