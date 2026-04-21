@@ -1,0 +1,35 @@
+name: LaunchGenie Daily Automation
+
+on:
+  schedule:
+    - cron: "0 9 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Generate report
+        run: node scripts/generateDaily.js
+
+      - name: Create issues
+        run: node scripts/createIssues.js reports/daily/$(date +'%Y-%m-%d').md
+
+      - name: Commit report
+        run: |
+          git config --global user.name "LaunchGenie Bot"
+          git config --global user.email "bot@launchgenie.ai"
+          git add .
+          git commit -m "auto: daily report $(date +'%Y-%m-%d')" || echo "No changes"
+          git push
