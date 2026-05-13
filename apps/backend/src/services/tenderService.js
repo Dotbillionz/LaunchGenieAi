@@ -14,6 +14,7 @@ const DEFAULT_KEYWORDS = [
 ];
 
 const DEFAULT_REGION_FOCUS = ['Italy', 'Tuscany', 'EU'];
+const DEFAULT_REGION_HINTS = ['Italy', 'EU'];
 
 const MS_PER_DAY = 24 * 60 * 60 * 1000;
 
@@ -246,10 +247,9 @@ function keywordScore(notice, keywords) {
 }
 
 function regionScore(notice, regionFocus) {
+  const eligibleRegions = [notice.region, notice.location, notice.location?.split(' / ')[1], ...DEFAULT_REGION_HINTS].filter(Boolean);
   const matches = regionFocus.filter((region) =>
-    [notice.region, notice.location, notice.location?.split(' / ')[1], 'Italy', 'EU']
-      .filter(Boolean)
-      .some((value) => String(value).toLowerCase() === String(region).toLowerCase())
+    eligibleRegions.some((value) => String(value).toLowerCase() === String(region).toLowerCase())
   );
 
   return {

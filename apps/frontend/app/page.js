@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'http://localhost:8080';
 
@@ -54,7 +54,7 @@ export default function HomePage() {
     loadDashboard();
   }, []);
 
-  const topOpportunity = useMemo(() => opportunities[0], [opportunities]);
+  const topOpportunity = opportunities[0];
 
   return (
     <main style={{ padding: 24, display: 'grid', gap: 16 }}>

@@ -4,7 +4,7 @@ import { scanTenders } from '../apps/backend/src/services/tenderService.js';
 
 async function main() {
   const today = new Date().toISOString().split('T')[0];
-  const result = scanTenders({});
+  const result = await scanTenders({});
   const shortlisted = result.opportunities.filter(({ shortlisted: isShortlisted }) => isShortlisted);
 
   const jsonDir = path.join('data', 'tenders');

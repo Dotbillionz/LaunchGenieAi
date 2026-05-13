@@ -32,7 +32,7 @@ tenderRouter.post('/scan', requireRole(['admin', 'executive']), async (req, res)
   if (sync.notion && shortlisted.length) {
     syncResults.notion = await syncDecisionToNotion({
       title: shortlisted[0].title,
-      status: shortlisted[0].shortlisted ? 'shortlisted' : 'monitor',
+      status: 'shortlisted',
       owner: 'LaunchGenie Tender Desk'
     });
   }
