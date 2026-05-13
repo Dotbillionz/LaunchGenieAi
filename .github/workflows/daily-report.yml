@@ -23,6 +23,9 @@ jobs:
       - name: Generate report
         run: node scripts/generateDaily.js
 
+      - name: Generate WCGroup tender briefing
+        run: node scripts/generateTenderBriefing.js
+
       - name: Create issues
         run: node scripts/createIssues.js reports/daily/$(date +'%Y-%m-%d').md
 
