@@ -111,7 +111,7 @@ export default function HomePage() {
             <strong>Recommended route:</strong> {topOpportunity.legalRouteLabel}
           </p>
           <p>
-            <strong>Deadline:</strong> {new Date(topOpportunity.deadline).toLocaleDateString()} · <strong>Value:</strong>{' '}
+            <strong>Deadline:</strong> {new Date(topOpportunity.deadline).toLocaleDateString('en-GB')} · <strong>Value:</strong>{' '}
             €{topOpportunity.estimatedValue.toLocaleString()}
           </p>
           <ul>

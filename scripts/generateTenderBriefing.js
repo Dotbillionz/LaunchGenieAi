@@ -2,27 +2,28 @@ import fs from 'fs';
 import path from 'path';
 import { scanTenders } from '../apps/backend/src/services/tenderService.js';
 
-const today = new Date().toISOString().split('T')[0];
-const result = scanTenders({});
-const shortlisted = result.opportunities.filter(({ shortlisted: isShortlisted }) => isShortlisted);
+async function main() {
+  const today = new Date().toISOString().split('T')[0];
+  const result = scanTenders({});
+  const shortlisted = result.opportunities.filter(({ shortlisted: isShortlisted }) => isShortlisted);
 
-const jsonDir = path.join('data', 'tenders');
-const reportsDir = path.join('reports', 'tenders');
+  const jsonDir = path.join('data', 'tenders');
+  const reportsDir = path.join('reports', 'tenders');
 
-fs.mkdirSync(jsonDir, { recursive: true });
-fs.mkdirSync(reportsDir, { recursive: true });
+  fs.mkdirSync(jsonDir, { recursive: true });
+  fs.mkdirSync(reportsDir, { recursive: true });
 
-const jsonOutput = {
-  generatedAt: result.generatedAt,
-  summary: result.summary,
-  criteria: result.criteria,
-  opportunities: result.opportunities
-};
+  const jsonOutput = {
+    generatedAt: result.generatedAt,
+    summary: result.summary,
+    criteria: result.criteria,
+    opportunities: result.opportunities
+  };
 
-fs.writeFileSync(path.join(jsonDir, 'wcgroup-italy-latest.json'), JSON.stringify(jsonOutput, null, 2));
-fs.writeFileSync(path.join(reportsDir, `${today}.json`), JSON.stringify(jsonOutput, null, 2));
+  fs.writeFileSync(path.join(jsonDir, 'wcgroup-italy-latest.json'), JSON.stringify(jsonOutput, null, 2));
+  fs.writeFileSync(path.join(reportsDir, `${today}.json`), JSON.stringify(jsonOutput, null, 2));
 
-const markdown = `# WCGroup Italy Tender Briefing — ${today}
+  const markdown = `# WCGroup Italy Tender Briefing — ${today}
 
 ## Scan Summary
 - Official sources monitored: ${result.summary.totalSources}
@@ -54,6 +55,9 @@ ${opportunity.actionPack.nextActionTimeline.map((item) => `  - ${item}`).join('\
 - No official bid is submitted automatically. Final submission remains subject to human and legal review.
 `;
 
-fs.writeFileSync(path.join(reportsDir, `${today}.md`), markdown);
+  fs.writeFileSync(path.join(reportsDir, `${today}.md`), markdown);
 
-console.log('Tender briefing generated:', path.join(reportsDir, `${today}.md`));
+  console.log('Tender briefing generated:', path.join(reportsDir, `${today}.md`));
+}
+
+await main();

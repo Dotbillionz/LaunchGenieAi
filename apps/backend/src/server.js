@@ -1,3 +1,4 @@
+import { fileURLToPath } from 'url';
 import cors from 'cors';
 import express from 'express';
 import helmet from 'helmet';
@@ -8,7 +9,7 @@ import { healthRouter } from './routes/health.js';
 import { tenderRouter } from './routes/tenders.js';
 import { webhookRouter } from './routes/webhooks.js';
 
-const app = express();
+export const app = express();
 
 app.use(
   express.json({
@@ -26,6 +27,8 @@ app.use('/api/webhooks', webhookRouter);
 app.use('/api/briefings', briefingRouter);
 app.use('/api/tenders', tenderRouter);
 
-app.listen(env.port, () => {
-  console.log(`crownops backend listening on :${env.port}`);
-});
+if (process.argv[1] && fileURLToPath(import.meta.url) === process.argv[1]) {
+  app.listen(env.port, () => {
+    console.log(`crownops backend listening on :${env.port}`);
+  });
+}

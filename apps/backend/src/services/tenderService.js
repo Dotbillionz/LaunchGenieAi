@@ -4,6 +4,7 @@ const DEFAULT_KEYWORDS = [
   'trucking',
   'drilling',
   'boreage',
+  'boring',
   'infrastructure',
   'fintech',
   'information technology',
@@ -174,7 +175,7 @@ const noticeTemplates = [
     location: 'Fucecchio',
     estimatedValue: 310000,
     deadlineOffsetDays: 5,
-    sectorTags: ['drilling', 'boreage', 'infrastructure', 'consulting'],
+    sectorTags: ['drilling', 'boreage', 'boring', 'infrastructure', 'consulting'],
     foreignOperatorEligible: false,
     requiresSOA: true,
     requiresPartner: true
