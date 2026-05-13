@@ -41,7 +41,7 @@ ${shortlisted
     (opportunity) => `### ${opportunity.title}
 - Source: ${opportunity.sourceName}
 - Score: ${opportunity.score.total}/100
-- Legal route: ${opportunity.legalRoute}
+- Legal route: ${opportunity.legalRouteLabel}
 - Estimated value: €${opportunity.estimatedValue.toLocaleString()}
 - Deadline: ${new Date(opportunity.deadline).toLocaleDateString('en-GB')}
 - Memo: ${opportunity.actionPack.bidNoBidMemo}

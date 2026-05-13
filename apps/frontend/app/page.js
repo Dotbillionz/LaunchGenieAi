@@ -108,7 +108,7 @@ export default function HomePage() {
           </p>
           <p style={{ color: '#9ba9cc' }}>{topOpportunity.actionPack.bidNoBidMemo}</p>
           <p>
-            <strong>Recommended route:</strong> {topOpportunity.legalRoute}
+            <strong>Recommended route:</strong> {topOpportunity.legalRouteLabel}
           </p>
           <p>
             <strong>Deadline:</strong> {new Date(topOpportunity.deadline).toLocaleDateString()} · <strong>Value:</strong>{' '}

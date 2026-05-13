@@ -43,7 +43,7 @@ tenderRouter.post('/scan', requireRole(['admin', 'executive']), async (req, res)
   });
 });
 
-tenderRouter.get('/opportunities', (_req, res) => {
+tenderRouter.get('/opportunities', (req, res) => {
   res.json(
     getTenderOpportunities({
       shortlisted: req.query.shortlisted,

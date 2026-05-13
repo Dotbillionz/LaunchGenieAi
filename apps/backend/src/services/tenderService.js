@@ -315,13 +315,21 @@ function determineLegalRoute(notice) {
   return 'future-italian-srl';
 }
 
-function buildActionPack(opportunity, keywords) {
-  const legalRouteLabel =
+function getLegalRouteLabel(legalRoute) {
+  return (
     {
       'direct-us-llc': 'Direct US LLC route',
       'italian-partner-rti-avvalimento': 'Italian partner / RTI / avvalimento route',
       'future-italian-srl': 'Future Italian S.r.l. route'
-    }[opportunity.legalRoute] || opportunity.legalRoute;
+    }[legalRoute] || legalRoute
+  );
+}
+
+function buildActionPack(opportunity, keywords) {
+  const legalRouteLabel = getLegalRouteLabel(opportunity.legalRoute);
+  const matchedKeywords = opportunity.score.keywordFit.matchedKeywords.length
+    ? opportunity.score.keywordFit.matchedKeywords
+    : keywords.slice(0, 3);
 
   const checklist = [
     'Company profile and references relevant to the notice',
@@ -345,7 +353,7 @@ function buildActionPack(opportunity, keywords) {
   return {
     bidNoBidMemo:
       opportunity.score.total >= 60
-        ? `Bid recommended: ${opportunity.title} aligns with ${keywords.slice(0, 3).join(', ')} and scores ${opportunity.score.total}/100. ${legalRouteLabel} is the recommended legal route.`
+        ? `Bid recommended: ${opportunity.title} aligns with ${matchedKeywords.join(', ')} and scores ${opportunity.score.total}/100. ${legalRouteLabel} is the recommended legal route.`
         : `No-bid or monitor: ${opportunity.title} currently scores ${opportunity.score.total}/100 and requires extra qualification work. ${legalRouteLabel} remains the fallback route if the opportunity is strategically important.`,
     documentChecklist: checklist,
     partnerOutreachDraft: `Hello,\n\nWCGroup is reviewing the ${opportunity.title} opportunity and is seeking an Italian execution partner for qualification, local compliance, and delivery coverage. Please confirm availability for a quick review call and share relevant references.\n\nBest regards,\nLaunchGenie Tender Desk`,
@@ -421,6 +429,7 @@ function buildOpportunity(template, options) {
     requiresPartner: Boolean(template.requiresPartner),
     requiresMarketplaceRegistration: Boolean(template.requiresMarketplaceRegistration),
     legalRoute,
+    legalRouteLabel: getLegalRouteLabel(legalRoute),
     shortlisted: score.total >= 60,
     score,
     searchInstruction: notice.searchInstruction,
