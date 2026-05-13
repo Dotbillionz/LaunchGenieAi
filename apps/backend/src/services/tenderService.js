@@ -3,7 +3,6 @@ const DEFAULT_KEYWORDS = [
   'logistics',
   'trucking',
   'drilling',
-  'boreage',
   'boring',
   'infrastructure',
   'fintech',
@@ -171,12 +170,12 @@ const noticeTemplates = [
     sourceId: 'fucecchio',
     title: 'Fucecchio drilling and water infrastructure maintenance support',
     description:
-      'Local opportunity covering boreage, drilling support, and small-scale water infrastructure maintenance planning for municipal assets.',
+      'Local opportunity covering boring, drilling support, and small-scale water infrastructure maintenance planning for municipal assets.',
     region: 'Tuscany',
     location: 'Fucecchio',
     estimatedValue: 310000,
     deadlineOffsetDays: 5,
-    sectorTags: ['drilling', 'boreage', 'boring', 'infrastructure', 'consulting'],
+    sectorTags: ['drilling', 'boring', 'infrastructure', 'consulting'],
     foreignOperatorEligible: false,
     requiresSOA: true,
     requiresPartner: true
