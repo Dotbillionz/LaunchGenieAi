@@ -1,0 +1,9 @@
+{
+  "core": "packages/core",
+  "ops": "packages/ops",
+  "intelligence": "packages/intelligence",
+  "risk": "packages/risk",
+  "finance": "packages/finance",
+  "compliance": "packages/compliance",
+  "growth": "packages/growth"
+}
