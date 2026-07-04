@@ -1,0 +1,2 @@
+# Daily reports are generated automatically by scripts/generateDaily.js
+# and committed by the GitHub Actions workflow at .github/workflows/daily.yml
