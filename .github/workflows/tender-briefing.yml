@@ -1,0 +1,40 @@
+name: WCGroup Italy Tender Briefing
+
+on:
+  schedule:
+    - cron: "0 6 * * *"  # runs daily at 6 AM UTC before business hours
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  tender-briefing:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate tender briefing
+        run: node scripts/generateTenderBriefing.js
+
+      - name: Commit & Push
+        run: |
+          git config --global user.name "LaunchGenie Bot"
+          git config --global user.email "bot@launchgenie.ai"
+          git add data/tenders reports/tenders
+          if git diff --cached --quiet; then
+            echo "No changes to commit"
+            exit 0
+          fi
+          git commit -m "auto: WCGroup Italy tender briefing $(date +'%Y-%m-%d')"
+          git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git
