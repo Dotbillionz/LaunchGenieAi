@@ -1,0 +1,510 @@
+{
+  "generatedAt": "2026-08-26T19:46:22.307Z",
+  "summary": {
+    "totalSources": 6,
+    "totalOpportunities": 6,
+    "shortlisted": 5,
+    "directUsLlc": 3,
+    "partnerRoute": 2,
+    "futureItalianSrl": 1
+  },
+  "criteria": {
+    "keywords": [
+      "import export",
+      "logistics",
+      "trucking",
+      "drilling",
+      "boring",
+      "infrastructure",
+      "fintech",
+      "information technology",
+      "cloud",
+      "cybersecurity",
+      "consulting"
+    ],
+    "regionFocus": [
+      "Italy",
+      "Tuscany",
+      "EU"
+    ],
+    "sourceIds": [
+      "ted",
+      "consip",
+      "anac",
+      "start-toscana",
+      "mepa",
+      "fucecchio"
+    ]
+  },
+  "opportunities": [
+    {
+      "id": "ted-eu-customs-cloud-and-trade-finance-integration-services",
+      "sourceId": "ted",
+      "sourceName": "TED / Tenders Electronic Daily",
+      "title": "EU customs cloud and trade-finance integration services",
+      "description": "Cross-border trade platform, customs workflow automation, cybersecurity controls, and cloud integration for import/export operators serving Italian logistics corridors.",
+      "region": "EU",
+      "location": "Italy",
+      "estimatedValue": 1600000,
+      "deadline": "2026-09-10T19:46:22.306Z",
+      "sectorTags": [
+        "import export",
+        "fintech",
+        "cloud",
+        "cybersecurity",
+        "consulting"
+      ],
+      "foreignOperatorEligible": true,
+      "requiresSOA": false,
+      "requiresPartner": false,
+      "requiresMarketplaceRegistration": false,
+      "legalRoute": "direct-us-llc",
+      "legalRouteLabel": "Direct US LLC route",
+      "shortlisted": true,
+      "score": {
+        "total": 95,
+        "keywordFit": {
+          "matchedKeywords": [
+            "import export",
+            "logistics",
+            "fintech",
+            "cloud",
+            "cybersecurity",
+            "consulting"
+          ],
+          "score": 30
+        },
+        "regionFit": {
+          "matchedRegions": [
+            "Italy",
+            "EU"
+          ],
+          "score": 15
+        },
+        "foreignOperatorEligibility": {
+          "score": 15,
+          "note": "Foreign operator participation appears possible."
+        },
+        "soaRtiRisk": {
+          "score": 20,
+          "level": "low"
+        },
+        "deadlineUrgency": {
+          "score": 5,
+          "daysUntilDeadline": 15
+        },
+        "estimatedValue": 10
+      },
+      "searchInstruction": {
+        "type": "search_url",
+        "value": "https://ted.europa.eu/en/search/result?query=import%20export%20OR%20logistics%20OR%20trucking%20OR%20drilling%20OR%20boring%20OR%20infrastructure%20OR%20fintech%20OR%20information%20technology%20OR%20cloud%20OR%20cybersecurity%20OR%20consulting"
+      },
+      "actionPack": {
+        "bidNoBidMemo": "Bid recommended: EU customs cloud and trade-finance integration services aligns with import export, logistics, fintech, cloud, cybersecurity, consulting and scores 95/100. Direct US LLC route is the recommended legal route.",
+        "documentChecklist": [
+          "Company profile and references relevant to the notice",
+          "Tender participation declaration and beneficial ownership details",
+          "Italian tax/VAT and representative readiness check",
+          "Technical and financial capacity evidence"
+        ],
+        "partnerOutreachDraft": "Hello,\n\nWCGroup is reviewing the EU customs cloud and trade-finance integration services opportunity and is seeking an Italian execution partner for qualification, local compliance, and delivery coverage. Please confirm availability for a quick review call and share relevant references.\n\nBest regards,\nLaunchGenie Tender Desk",
+        "nextActionTimeline": [
+          "T+0: Validate notice scope, submission channel, and legal route (Direct US LLC route).",
+          "T+1 day: Confirm go/no-go owner, collect mandatory company documents, and map qualification gaps.",
+          "T+2 days: Draft partner outreach and compliance checklist for human/legal review.",
+          "T-3: Final internal review before submission window closes."
+        ]
+      }
+    },
+    {
+      "id": "consip-national-logistics-and-trucking-optimization-framework",
+      "sourceId": "consip",
+      "sourceName": "Consip Open Data",
+      "title": "National logistics and trucking optimization framework",
+      "description": "Framework agreement for route optimization, transport visibility, freight analytics, and consulting support for national public logistics operations.",
+      "region": "Italy",
+      "location": "Rome",
+      "estimatedValue": 920000,
+      "deadline": "2026-09-06T19:46:22.307Z",
+      "sectorTags": [
+        "logistics",
+        "trucking",
+        "consulting",
+        "information technology"
+      ],
+      "foreignOperatorEligible": true,
+      "requiresSOA": false,
+      "requiresPartner": false,
+      "requiresMarketplaceRegistration": false,
+      "legalRoute": "direct-us-llc",
+      "legalRouteLabel": "Direct US LLC route",
+      "shortlisted": true,
+      "score": {
+        "total": 87,
+        "keywordFit": {
+          "matchedKeywords": [
+            "logistics",
+            "trucking",
+            "information technology",
+            "consulting"
+          ],
+          "score": 24
+        },
+        "regionFit": {
+          "matchedRegions": [
+            "Italy",
+            "EU"
+          ],
+          "score": 15
+        },
+        "foreignOperatorEligibility": {
+          "score": 15,
+          "note": "Foreign operator participation appears possible."
+        },
+        "soaRtiRisk": {
+          "score": 20,
+          "level": "low"
+        },
+        "deadlineUrgency": {
+          "score": 5,
+          "daysUntilDeadline": 11
+        },
+        "estimatedValue": 8
+      },
+      "searchInstruction": {
+        "type": "api_request",
+        "value": {
+          "method": "GET",
+          "endpoint": "https://www.consip.it/bandi-di-gara",
+          "params": {
+            "keyword": "import export, logistics, trucking, drilling, boring, infrastructure, fintech, information technology, cloud, cybersecurity, consulting"
+          }
+        }
+      },
+      "actionPack": {
+        "bidNoBidMemo": "Bid recommended: National logistics and trucking optimization framework aligns with logistics, trucking, information technology, consulting and scores 87/100. Direct US LLC route is the recommended legal route.",
+        "documentChecklist": [
+          "Company profile and references relevant to the notice",
+          "Tender participation declaration and beneficial ownership details",
+          "Italian tax/VAT and representative readiness check",
+          "Technical and financial capacity evidence"
+        ],
+        "partnerOutreachDraft": "Hello,\n\nWCGroup is reviewing the National logistics and trucking optimization framework opportunity and is seeking an Italian execution partner for qualification, local compliance, and delivery coverage. Please confirm availability for a quick review call and share relevant references.\n\nBest regards,\nLaunchGenie Tender Desk",
+        "nextActionTimeline": [
+          "T+0: Validate notice scope, submission channel, and legal route (Direct US LLC route).",
+          "T+1 day: Confirm go/no-go owner, collect mandatory company documents, and map qualification gaps.",
+          "T+2 days: Draft partner outreach and compliance checklist for human/legal review.",
+          "T-3: Final internal review before submission window closes."
+        ]
+      }
+    },
+    {
+      "id": "anac-municipal-cloud-migration-and-security-resilience-services",
+      "sourceId": "anac",
+      "sourceName": "ANAC Pubblicità a Valore Legale",
+      "title": "Municipal cloud migration and security resilience services",
+      "description": "Support services for municipal infrastructure hardening, cloud migration planning, incident readiness, and cybersecurity documentation.",
+      "region": "Italy",
+      "location": "Florence",
+      "estimatedValue": 380000,
+      "deadline": "2026-09-03T19:46:22.307Z",
+      "sectorTags": [
+        "cloud",
+        "cybersecurity",
+        "infrastructure",
+        "consulting"
+      ],
+      "foreignOperatorEligible": true,
+      "requiresSOA": false,
+      "requiresPartner": false,
+      "requiresMarketplaceRegistration": false,
+      "legalRoute": "direct-us-llc",
+      "legalRouteLabel": "Direct US LLC route",
+      "shortlisted": true,
+      "score": {
+        "total": 87,
+        "keywordFit": {
+          "matchedKeywords": [
+            "infrastructure",
+            "cloud",
+            "cybersecurity",
+            "consulting"
+          ],
+          "score": 24
+        },
+        "regionFit": {
+          "matchedRegions": [
+            "Italy",
+            "EU"
+          ],
+          "score": 15
+        },
+        "foreignOperatorEligibility": {
+          "score": 15,
+          "note": "Foreign operator participation appears possible."
+        },
+        "soaRtiRisk": {
+          "score": 20,
+          "level": "low"
+        },
+        "deadlineUrgency": {
+          "score": 7,
+          "daysUntilDeadline": 8
+        },
+        "estimatedValue": 6
+      },
+      "searchInstruction": {
+        "type": "search_url",
+        "value": "https://pubblicitalegale.anticorruzione.it/ricerca?keyword=import%20export%20OR%20logistics%20OR%20trucking%20OR%20drilling%20OR%20boring%20OR%20infrastructure%20OR%20fintech%20OR%20information%20technology%20OR%20cloud%20OR%20cybersecurity%20OR%20consulting"
+      },
+      "actionPack": {
+        "bidNoBidMemo": "Bid recommended: Municipal cloud migration and security resilience services aligns with infrastructure, cloud, cybersecurity, consulting and scores 87/100. Direct US LLC route is the recommended legal route.",
+        "documentChecklist": [
+          "Company profile and references relevant to the notice",
+          "Tender participation declaration and beneficial ownership details",
+          "Italian tax/VAT and representative readiness check",
+          "Technical and financial capacity evidence"
+        ],
+        "partnerOutreachDraft": "Hello,\n\nWCGroup is reviewing the Municipal cloud migration and security resilience services opportunity and is seeking an Italian execution partner for qualification, local compliance, and delivery coverage. Please confirm availability for a quick review call and share relevant references.\n\nBest regards,\nLaunchGenie Tender Desk",
+        "nextActionTimeline": [
+          "T+0: Validate notice scope, submission channel, and legal route (Direct US LLC route).",
+          "T+1 day: Confirm go/no-go owner, collect mandatory company documents, and map qualification gaps.",
+          "T+2 days: Draft partner outreach and compliance checklist for human/legal review.",
+          "T-3: Final internal review before submission window closes."
+        ]
+      }
+    },
+    {
+      "id": "start-toscana-tuscany-smart-road-logistics-and-infrastructure-support-services",
+      "sourceId": "start-toscana",
+      "sourceName": "START Toscana",
+      "title": "Tuscany smart road logistics and infrastructure support services",
+      "description": "Regional tender for logistics coordination, fleet visibility, and infrastructure planning across Tuscany transport corridors.",
+      "region": "Tuscany",
+      "location": "Tuscany",
+      "estimatedValue": 540000,
+      "deadline": "2026-09-01T19:46:22.307Z",
+      "sectorTags": [
+        "logistics",
+        "trucking",
+        "infrastructure",
+        "consulting"
+      ],
+      "foreignOperatorEligible": true,
+      "requiresSOA": false,
+      "requiresPartner": true,
+      "requiresMarketplaceRegistration": false,
+      "legalRoute": "italian-partner-rti-avvalimento",
+      "legalRouteLabel": "Italian partner / RTI / avvalimento route",
+      "shortlisted": true,
+      "score": {
+        "total": 79,
+        "keywordFit": {
+          "matchedKeywords": [
+            "logistics",
+            "trucking",
+            "infrastructure",
+            "consulting"
+          ],
+          "score": 24
+        },
+        "regionFit": {
+          "matchedRegions": [
+            "Italy",
+            "Tuscany",
+            "EU"
+          ],
+          "score": 15
+        },
+        "foreignOperatorEligibility": {
+          "score": 15,
+          "note": "Foreign operator participation appears possible."
+        },
+        "soaRtiRisk": {
+          "score": 10,
+          "level": "medium"
+        },
+        "deadlineUrgency": {
+          "score": 7,
+          "daysUntilDeadline": 6
+        },
+        "estimatedValue": 8
+      },
+      "searchInstruction": {
+        "type": "search_url",
+        "value": "https://start.toscana.it/tendering/tenders?query=import%20export%20OR%20logistics%20OR%20trucking%20OR%20drilling%20OR%20boring%20OR%20infrastructure%20OR%20fintech%20OR%20information%20technology%20OR%20cloud%20OR%20cybersecurity%20OR%20consulting"
+      },
+      "actionPack": {
+        "bidNoBidMemo": "Bid recommended: Tuscany smart road logistics and infrastructure support services aligns with logistics, trucking, infrastructure, consulting and scores 79/100. Italian partner / RTI / avvalimento route is the recommended legal route.",
+        "documentChecklist": [
+          "Company profile and references relevant to the notice",
+          "Tender participation declaration and beneficial ownership details",
+          "Italian tax/VAT and representative readiness check",
+          "Technical and financial capacity evidence",
+          "Draft RTI / subcontracting / local partner structure"
+        ],
+        "partnerOutreachDraft": "Hello,\n\nWCGroup is reviewing the Tuscany smart road logistics and infrastructure support services opportunity and is seeking an Italian execution partner for qualification, local compliance, and delivery coverage. Please confirm availability for a quick review call and share relevant references.\n\nBest regards,\nLaunchGenie Tender Desk",
+        "nextActionTimeline": [
+          "T+0: Validate notice scope, submission channel, and legal route (Italian partner / RTI / avvalimento route).",
+          "T+1 day: Confirm go/no-go owner, collect mandatory company documents, and map qualification gaps.",
+          "T+2 days: Draft partner outreach and compliance checklist for human/legal review.",
+          "T-3: Final internal review before submission window closes."
+        ]
+      }
+    },
+    {
+      "id": "mepa-mepa-rdo-for-fintech-modernization-and-supplier-onboarding",
+      "sourceId": "mepa",
+      "sourceName": "Acquisti in Rete PA / MePA",
+      "title": "MePA RDO for fintech modernization and supplier onboarding",
+      "description": "Marketplace RDO covering fintech workflow redesign, digital payments integration, vendor onboarding, and governance consulting.",
+      "region": "Italy",
+      "location": "Online / Italy",
+      "estimatedValue": 240000,
+      "deadline": "2026-08-30T19:46:22.307Z",
+      "sectorTags": [
+        "fintech",
+        "consulting",
+        "information technology"
+      ],
+      "foreignOperatorEligible": false,
+      "requiresSOA": false,
+      "requiresPartner": false,
+      "requiresMarketplaceRegistration": true,
+      "legalRoute": "future-italian-srl",
+      "legalRouteLabel": "Future Italian S.r.l. route",
+      "shortlisted": true,
+      "score": {
+        "total": 62,
+        "keywordFit": {
+          "matchedKeywords": [
+            "fintech",
+            "information technology",
+            "consulting"
+          ],
+          "score": 18
+        },
+        "regionFit": {
+          "matchedRegions": [
+            "Italy",
+            "EU"
+          ],
+          "score": 15
+        },
+        "foreignOperatorEligibility": {
+          "score": 5,
+          "note": "Local registration or partner structure is likely needed."
+        },
+        "soaRtiRisk": {
+          "score": 10,
+          "level": "medium"
+        },
+        "deadlineUrgency": {
+          "score": 10,
+          "daysUntilDeadline": 4
+        },
+        "estimatedValue": 4
+      },
+      "searchInstruction": {
+        "type": "search_url",
+        "value": "https://www.acquistinretepa.it/opencms/opencms/vetrina_bandi.html?query=import%20export%20OR%20logistics%20OR%20trucking%20OR%20drilling%20OR%20boring%20OR%20infrastructure%20OR%20fintech%20OR%20information%20technology%20OR%20cloud%20OR%20cybersecurity%20OR%20consulting"
+      },
+      "actionPack": {
+        "bidNoBidMemo": "Bid recommended: MePA RDO for fintech modernization and supplier onboarding aligns with fintech, information technology, consulting and scores 62/100. Future Italian S.r.l. route is the recommended legal route.",
+        "documentChecklist": [
+          "Company profile and references relevant to the notice",
+          "Tender participation declaration and beneficial ownership details",
+          "Italian tax/VAT and representative readiness check",
+          "Technical and financial capacity evidence",
+          "MePA supplier registration and marketplace profile validation"
+        ],
+        "partnerOutreachDraft": "Hello,\n\nWCGroup is reviewing the MePA RDO for fintech modernization and supplier onboarding opportunity and is seeking an Italian execution partner for qualification, local compliance, and delivery coverage. Please confirm availability for a quick review call and share relevant references.\n\nBest regards,\nLaunchGenie Tender Desk",
+        "nextActionTimeline": [
+          "T+0: Validate notice scope, submission channel, and legal route (Future Italian S.r.l. route).",
+          "T+1 day: Confirm go/no-go owner, collect mandatory company documents, and map qualification gaps.",
+          "T+2 days: Draft partner outreach and compliance checklist for human/legal review.",
+          "T-3: Final internal review before submission window closes."
+        ]
+      }
+    },
+    {
+      "id": "fucecchio-fucecchio-drilling-and-water-infrastructure-maintenance-support",
+      "sourceId": "fucecchio",
+      "sourceName": "Comune di Fucecchio transparency portal",
+      "title": "Fucecchio drilling and water infrastructure maintenance support",
+      "description": "Local opportunity covering boring, drilling support, and small-scale water infrastructure maintenance planning for municipal assets.",
+      "region": "Tuscany",
+      "location": "Fucecchio",
+      "estimatedValue": 310000,
+      "deadline": "2026-08-31T19:46:22.307Z",
+      "sectorTags": [
+        "drilling",
+        "boring",
+        "infrastructure",
+        "consulting"
+      ],
+      "foreignOperatorEligible": false,
+      "requiresSOA": true,
+      "requiresPartner": true,
+      "requiresMarketplaceRegistration": false,
+      "legalRoute": "italian-partner-rti-avvalimento",
+      "legalRouteLabel": "Italian partner / RTI / avvalimento route",
+      "shortlisted": false,
+      "score": {
+        "total": 59,
+        "keywordFit": {
+          "matchedKeywords": [
+            "drilling",
+            "boring",
+            "infrastructure",
+            "consulting"
+          ],
+          "score": 24
+        },
+        "regionFit": {
+          "matchedRegions": [
+            "Italy",
+            "Tuscany",
+            "EU"
+          ],
+          "score": 15
+        },
+        "foreignOperatorEligibility": {
+          "score": 2,
+          "note": "Local registration or partner structure is likely needed."
+        },
+        "soaRtiRisk": {
+          "score": 2,
+          "level": "high"
+        },
+        "deadlineUrgency": {
+          "score": 10,
+          "daysUntilDeadline": 5
+        },
+        "estimatedValue": 6
+      },
+      "searchInstruction": {
+        "type": "search_url",
+        "value": "https://www.comune.fucecchio.fi.it/amministrazione-trasparente/bandi-di-gara-e-contratti?query=import%20export%20OR%20logistics%20OR%20trucking%20OR%20drilling%20OR%20boring%20OR%20infrastructure%20OR%20fintech%20OR%20information%20technology%20OR%20cloud%20OR%20cybersecurity%20OR%20consulting"
+      },
+      "actionPack": {
+        "bidNoBidMemo": "No-bid or monitor: Fucecchio drilling and water infrastructure maintenance support currently scores 59/100 and requires extra qualification work. Italian partner / RTI / avvalimento route remains the fallback route if the opportunity is strategically important.",
+        "documentChecklist": [
+          "Company profile and references relevant to the notice",
+          "Tender participation declaration and beneficial ownership details",
+          "Italian tax/VAT and representative readiness check",
+          "Technical and financial capacity evidence",
+          "SOA qualification coverage or partner avvalimento evidence",
+          "Draft RTI / subcontracting / local partner structure"
+        ],
+        "partnerOutreachDraft": "Hello,\n\nWCGroup is reviewing the Fucecchio drilling and water infrastructure maintenance support opportunity and is seeking an Italian execution partner for qualification, local compliance, and delivery coverage. Please confirm availability for a quick review call and share relevant references.\n\nBest regards,\nLaunchGenie Tender Desk",
+        "nextActionTimeline": [
+          "T+0: Validate notice scope, submission channel, and legal route (Italian partner / RTI / avvalimento route).",
+          "T+1 day: Confirm go/no-go owner, collect mandatory company documents, and map qualification gaps.",
+          "T+2 days: Draft partner outreach and compliance checklist for human/legal review.",
+          "T-3: Final internal review before submission window closes."
+        ]
+      }
+    }
+  ]
+}
