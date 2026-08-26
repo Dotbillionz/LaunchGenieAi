@@ -361,7 +361,7 @@ function buildActionPack(opportunity, keywords) {
       `T+0: Validate notice scope, submission channel, and legal route (${legalRouteLabel}).`,
       'T+1 day: Confirm go/no-go owner, collect mandatory company documents, and map qualification gaps.',
       'T+2 days: Draft partner outreach and compliance checklist for human/legal review.',
-      `T-${Math.max(1, Math.min(3, opportunity.score.deadlineUrgency.daysUntilDeadline - 1))}: Final internal review before submission window closes.`
+      `T-${Math.max(1, Math.min(3, opportunity.score.deadlineUrgency.daysUntilDeadline - 1))} days: Final internal review before submission window closes.`
     ]
   };
 }
