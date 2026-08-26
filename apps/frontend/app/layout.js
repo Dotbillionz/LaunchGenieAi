@@ -1,6 +1,6 @@
 export const metadata = {
-  title: 'CrownOps Executive Console',
-  description: 'Fintech and blockchain command center'
+  title: 'LaunchGenie Tender Console',
+  description: 'WCGroup Italy tender sourcing operator'
 };
 
 export default function RootLayout({ children }) {

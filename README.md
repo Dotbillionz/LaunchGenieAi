@@ -102,3 +102,13 @@ npm run dev:backend
 ```bash
 npm run dev:frontend
 ```
+
+### WCGroup Italy tender sourcing endpoints
+
+- `GET /api/tenders/sources` lists the official tender sources and search/request templates.
+- `POST /api/tenders/scan` scores WCGroup-fit opportunities and can optionally fan out to Slack/Notion.
+- `GET /api/tenders/opportunities` returns the latest normalized opportunities and routing decisions.
+
+### Daily tender briefing automation
+
+The scheduled workflow now also runs `node scripts/generateTenderBriefing.js` to export a JSON snapshot at `data/tenders/wcgroup-italy-latest.json` and a markdown briefing under `reports/tenders/`.
