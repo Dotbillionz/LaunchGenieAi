@@ -437,7 +437,7 @@ function buildOpportunity(template, options) {
   };
 }
 
-function buildScanResult(options = {}) {
+export function buildScanResult(options = {}) {
   const keywords = normalizeKeywords(options.keywords);
   const regionFocus = normalizeRegions(options.regionFocus);
   const sourceIds = Array.isArray(options.sourceIds) && options.sourceIds.length ? options.sourceIds : tenderSources.map(({ id }) => id);

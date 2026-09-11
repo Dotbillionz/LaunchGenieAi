@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import { app } from '../server.js';
 
 test('briefings daily endpoint requires executive or admin role', async () => {
-  const server = app.listen(0);
+  const server = await new Promise((resolve) => {
+    const s = app.listen(0, () => resolve(s));
+  });
   const { port } = server.address();
   const baseUrl = `http://127.0.0.1:${port}`;
 
@@ -39,7 +41,9 @@ test('briefings daily endpoint requires executive or admin role', async () => {
 });
 
 test('briefings daily endpoint returns shortlisted opportunities with action packs', async () => {
-  const server = app.listen(0);
+  const server = await new Promise((resolve) => {
+    const s = app.listen(0, () => resolve(s));
+  });
   const { port } = server.address();
   const baseUrl = `http://127.0.0.1:${port}`;
 
