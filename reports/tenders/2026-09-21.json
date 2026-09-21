@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-21T12:32:51.730Z",
+  "generatedAt": "2026-09-21T15:27:19.436Z",
   "summary": {
     "totalSources": 6,
     "totalOpportunities": 6,
@@ -46,7 +46,7 @@
       "region": "EU",
       "location": "Italy",
       "estimatedValue": 1600000,
-      "deadline": "2026-10-06T12:32:51.729Z",
+      "deadline": "2026-10-06T15:27:19.436Z",
       "sectorTags": [
         "import export",
         "fintech",
@@ -125,7 +125,7 @@
       "region": "Italy",
       "location": "Rome",
       "estimatedValue": 920000,
-      "deadline": "2026-10-02T12:32:51.730Z",
+      "deadline": "2026-10-02T15:27:19.436Z",
       "sectorTags": [
         "logistics",
         "trucking",
@@ -207,7 +207,7 @@
       "region": "Italy",
       "location": "Florence",
       "estimatedValue": 380000,
-      "deadline": "2026-09-29T12:32:51.730Z",
+      "deadline": "2026-09-29T15:27:19.436Z",
       "sectorTags": [
         "cloud",
         "cybersecurity",
@@ -283,7 +283,7 @@
       "region": "Tuscany",
       "location": "Tuscany",
       "estimatedValue": 540000,
-      "deadline": "2026-09-27T12:32:51.730Z",
+      "deadline": "2026-09-27T15:27:19.436Z",
       "sectorTags": [
         "logistics",
         "trucking",
@@ -361,7 +361,7 @@
       "region": "Italy",
       "location": "Online / Italy",
       "estimatedValue": 240000,
-      "deadline": "2026-09-25T12:32:51.730Z",
+      "deadline": "2026-09-25T15:27:19.436Z",
       "sectorTags": [
         "fintech",
         "consulting",
@@ -436,7 +436,7 @@
       "region": "Tuscany",
       "location": "Fucecchio",
       "estimatedValue": 310000,
-      "deadline": "2026-09-26T12:32:51.730Z",
+      "deadline": "2026-09-26T15:27:19.436Z",
       "sectorTags": [
         "drilling",
         "boring",
