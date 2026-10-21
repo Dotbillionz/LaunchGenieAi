@@ -13,6 +13,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install
+      - run: npm ci
       - run: node --check apps/backend/src/server.js
       - run: npm test --workspace @crownops/backend
